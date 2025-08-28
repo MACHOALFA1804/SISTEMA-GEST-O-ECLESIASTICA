@@ -1,0 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variáveis CSS para temas */
+:root {
+  /* Tema Claro - Cores mais suaves e harmoniosas */
+  --bg-primary-light: #f8fafc;
+  --bg-secondary-light: #f1f5f9;
+  --bg-card-light: #ffffff;
+  --text-primary-light: #1e293b;
+  --text-secondary-light: #475569;
+  --border-light: #cbd5e1;
+  --accent-light: #0ea5e9;
+  --accent-hover-light: #0284c7;
+  
+  /* Tema Escuro */
+  --bg-primary-dark: #0f172a;
+  --bg-secondary-dark: #1e293b;
+  --bg-card-dark: rgba(30, 41, 59, 0.6);
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: #cbd5e1;
+  --border-dark: #475569;
+  --accent-dark: #22d3ee;
+  --accent-hover-dark: #06b6d4;
+}
+
+/* Tema Claro */
+.light {
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --bg-card: var(--bg-card-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --border: var(--border-light);
+  --accent: var(--accent-light);
+  --accent-hover: var(--accent-hover-light);
+}
+
+/* Tema Escuro */
+.dark {
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --bg-card: var(--bg-card-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --border: var(--border-dark);
+  --accent: var(--accent-dark);
+  --accent-hover: var(--accent-hover-dark);
+}
+
+/* Aplicar tema padrão (escuro) */
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Garantir que todos os elementos tenham o tema */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos para inputs e formulários */
+input, select, textarea {
+  background-color: var(--bg-secondary);
+  border-color: var(--border);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Estilos para botões */
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilos para tabelas */
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border-color: var(--border);
+}
+
+/* Estilos para scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Classes utilitárias para temas */
+.bg-theme-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-theme-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.bg-theme-card {
+  background-color: var(--bg-card);
+}
+
+.text-theme-primary {
+  color: var(--text-primary);
+}
+
+.text-theme-secondary {
+  color: var(--text-secondary);
+}
+
+.border-theme {
+  border-color: var(--border);
+}
+
+.bg-theme-accent {
+  background-color: var(--accent);
+}
+
+.bg-theme-accent-hover {
+  background-color: var(--accent-hover);
+}
+
+/* Estilos específicos para tema claro - APENAS para dashboards */
+.light .bg-slate-800\/60 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light .bg-slate-900 {
+  background-color: #f8fafc !important;
+}
+
+.light .text-white {
+  color: #1e293b !important;
+}
+
+.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+.light .text-slate-300 {
+  color: #64748b !important;
+}
+
+.light .border-cyan-500\/30 {
+  border-color: #0ea5e9 !important;
+}
+
+.light .shadow-black\/20 {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light .hover\:bg-slate-800\/80:hover {
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+/* Estilos para cards no tema claro */
+.light .bg-slate-800\/40 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.light .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+/* Estilos para botões no tema claro */
+.light .bg-blue-400 {
+  background-color: #0ea5e9 !important;
+}
+
+.light .bg-green-400 {
+  background-color: #10b981 !important;
+}
+
+.light .bg-purple-400 {
+  background-color: #8b5cf6 !important;
+}
+
+.light .bg-emerald-400 {
+  background-color: #059669 !important;
+}
+
+.light .bg-yellow-400 {
+  background-color: #f59e0b !important;
+}
+
+.light .bg-rose-400 {
+  background-color: #f43f5e !important;
+}
+
+.light .bg-red-500 {
+  background-color: #ef4444 !important;
+}
+
+.light .text-slate-900 {
+  color: #ffffff !important;
+}
+
+/* Estilos para inputs no tema claro */
+.light input, .light select, .light textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+.light input:focus, .light select:focus, .light textarea:focus {
+  border-color: #0ea5e9 !important;
+  box-shadow: 0 0 0 1px #0ea5e9 !important;
+}
+
+/* Estilos para o header no tema claro */
+.light .bg-slate-900\/80 {
+  background-color: rgba(248, 250, 252, 0.9) !important;
+}
+
+.light .border-cyan-500\/30 {
+  border-color: #0ea5e9 !important;
+}
+
+/* Estilos para o footer no tema claro */
+.light .text-cyan-400 {
+  color: #0ea5e9 !important;
+}
+
+/* IMPORTANTE: Manter a tela de login sempre com tema escuro */
+.min-h-screen.bg-slate-900 {
+  background-color: #0f172a !important;
+}
+
+.min-h-screen.bg-slate-900 .text-white {
+  color: #ffffff !important;
+}
+
+.min-h-screen.bg-slate-900 .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+.min-h-screen.bg-slate-900 .bg-slate-800\/60 {
+  background-color: rgba(30, 41, 59, 0.6) !important;
+}
+
+.min-h-screen.bg-slate-900 .border-cyan-500\/30 {
+  border-color: rgba(34, 211, 238, 0.3) !important;
+}
+
+.min-h-screen.bg-slate-900 .text-cyan-400 {
+  color: #22d3ee !important;
+}
